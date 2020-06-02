@@ -364,6 +364,10 @@ class Reading:
         self.accepted_answer = meaning_json[
             "accepted_answer"
         ]  #: Whether this answer is accepted as correct by Wanikani during review.
+        try:
+            self.reading_type = meaning_json["type"]
+        except KeyError:
+            pass
 
 
 class Assignment(Resource, Subjectable):
